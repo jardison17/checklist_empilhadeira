@@ -1,35 +1,34 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-main() => runApp(checklistempilhadeira());
+main() => runApp(const ExpensesApp());
 
-class checklistempilhadeira extends StatelessWidget {
+class ExpensesApp extends StatelessWidget {
+  const ExpensesApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text(
-            "Checklist Digital",
-            style: TextStyle(color: Colors.white),
-            textScaler: TextScaler.linear(1),
-          ),
-          backgroundColor: const Color.fromARGB(255, 241, 90, 2),
+    return const MaterialApp(home: MyHomePage());
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'Despesas Pessoais',
+          style: TextStyle(color: Colors.white),
         ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            // texfield
-            TextField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: 'Digite algo...',
-              ),
-            ),
-            Padding(padding: const EdgeInsets.all(12.0)),
-          ],
-        ),
+        backgroundColor: const Color.fromARGB(255, 1, 56, 87),
+      ),
+      body: Column(
+        children: [
+          Card(child: Text('Gráfico analista'), elevation: 5),
+          Card(child: Text('Lista de transação'), elevation: 5),
+        ],
       ),
     );
   }
