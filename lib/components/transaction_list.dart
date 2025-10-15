@@ -15,6 +15,8 @@ class TransactionList extends StatelessWidget {
           transactions.isEmpty
               ? Column(
                 children: [
+                  SizedBox(height: 10),
+
                   Text(
                     'Nada Por Aqui',
                     style: TextStyle(
@@ -24,7 +26,8 @@ class TransactionList extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Container(
+                  SizedBox(height: 10),
+                  SizedBox(
                     height: 200,
                     child: Image.asset('imagenwaiting.png', fit: BoxFit.cover),
                   ),
