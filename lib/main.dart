@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'components/transaction_form.dart';
 import 'model/transaction.dart';
