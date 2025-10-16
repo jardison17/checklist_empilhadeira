@@ -60,7 +60,7 @@ class MyHomePage extends StatelessWidget {
                       trailing: Text(
                         'R\$ ${tr.value.toStringAsFixed(2)}',
                         style: const TextStyle(
-                          fontWeight: FontWeight.w900,
+                          fontWeight: FontWeight.w300,
                           fontSize: 20,
                           color: Color.fromARGB(255, 25, 27, 25),
                         ),
