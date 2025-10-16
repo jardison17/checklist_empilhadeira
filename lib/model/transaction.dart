@@ -3,7 +3,7 @@ class Transaction {
   final String title;
   final double value;
   final DateTime date;
-  // Construtor.
+
   Transaction({
     required this.id,
     required this.title,
