@@ -16,13 +16,13 @@ class MyHomePage extends StatelessWidget {
     Transaction(
       id: 't1',
       title: 'Novo tênis de corrida',
-      value: 310.76,
+      value: 64.00,
       date: DateTime.now(),
     ),
     Transaction(
       id: 't2',
       title: 'Conta de luz',
-      value: 211.30,
+      value: 345.30,
       date: DateTime.now(),
     ),
   ];
@@ -35,7 +35,7 @@ class MyHomePage extends StatelessWidget {
           'Despesas Pessoais',
           style: TextStyle(color: Colors.white),
         ),
-        backgroundColor: const Color.fromARGB(255, 87, 1, 54),
+        backgroundColor: const Color.fromARGB(255, 26, 28, 26),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
