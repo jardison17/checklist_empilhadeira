@@ -1,18 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:checklist_empilhadeira/model/transaction.dart';
 
-main() => runApp(const ExpensesApp());
+void main() => runApp(ExpensesApp());
 
 class ExpensesApp extends StatelessWidget {
-  const ExpensesApp({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: MyHomePage());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: MyHomePage());
   }
 }
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+  // Lista de transações (exemplo)
+  final List<Transaction> _transactions = [
+    Transaction(
+      id: 't1',
+      title: 'Novo tênis de corrida',
+      value: 310.76,
+      date: DateTime.now(),
+    ),
+    Transaction(
+      id: 't2',
+      title: 'Conta de luz',
+      value: 211.30,
+      date: DateTime.now(),
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -22,12 +35,63 @@ class MyHomePage extends StatelessWidget {
           'Despesas Pessoais',
           style: TextStyle(color: Colors.white),
         ),
-        backgroundColor: const Color.fromARGB(255, 1, 56, 87),
+        backgroundColor: const Color.fromARGB(255, 87, 1, 54),
       ),
       body: Column(
-        children: [
-          Card(child: Text('Gráfico analista'), elevation: 5),
-          Card(child: Text('Lista de transação'), elevation: 5),
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: <Widget>[
+          Container(
+            width: double.infinity,
+            margin: const EdgeInsets.all(10),
+            child: const Card(
+              color: Colors.blueAccent,
+              elevation: 5,
+              child: Padding(
+                padding: EdgeInsets.all(10),
+                child: Text(
+                  'Gráfico analista',
+                  style: TextStyle(color: Colors.white),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+          ),
+          Column(
+            children:
+                _transactions.map((tr) {
+                  return Card(
+                    elevation: 5,
+                    margin: const EdgeInsets.symmetric(
+                      vertical: 8,
+                      horizontal: 10,
+                    ),
+                    child: ListTile(
+                      leading: CircleAvatar(
+                        backgroundColor: Colors.blueAccent,
+                        foregroundColor: Colors.white,
+                        radius: 30,
+                        child: Padding(
+                          padding: const EdgeInsets.all(6),
+                          child: FittedBox(
+                            child: Text('R\$${tr.value.toStringAsFixed(2)}'),
+                          ),
+                        ),
+                      ),
+                      title: Text(
+                        tr.title,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
+                      ),
+                      subtitle: Text(
+                        '${tr.date.day}/${tr.date.month}/${tr.date.year}',
+                      ),
+                    ),
+                  );
+                }).toList(),
+          ),
         ],
       ),
     );
