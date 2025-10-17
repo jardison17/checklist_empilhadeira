@@ -18,12 +18,7 @@ class MyHomePage extends StatelessWidget {
   MyHomePage({super.key});
 
   final List<Transaction> _transactions = [
-    Transaction(
-      id: 't1',
-      title: 'Novo Tênis',
-      value: 64.84,
-      date: DateTime.now(),
-    ),
+    Transaction(id: 't1', title: 'Tênis', value: 64.84, date: DateTime.now()),
     Transaction(
       id: 't2',
       title: 'Fone de Ouvido',
