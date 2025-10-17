@@ -21,7 +21,7 @@ class MyHomePage extends StatelessWidget {
     Transaction(
       id: 't1',
       title: 'Novo Tênis',
-      value: 64.89,
+      value: 64.84,
       date: DateTime.now(),
     ),
     Transaction(
