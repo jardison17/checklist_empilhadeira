@@ -26,6 +26,12 @@ class MyHomePage extends StatelessWidget {
       date: DateTime.now(),
     ),
     Transaction(id: 't2', title: 'mause', value: 99.00, date: DateTime.now()),
+    Transaction(
+      id: 't7',
+      title: 'mause sem fio',
+      value: 99.00,
+      date: DateTime.now(),
+    ),
   ];
 
   @override
