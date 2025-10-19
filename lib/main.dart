@@ -18,8 +18,8 @@ class ExpensesApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   MyHomePage({super.key});
 
-  String title;
-  String value;
+  final titleController = TextEditingController();
+  final valeuController = TextEditingController();
 
   final List<Transaction> _transactions = [
     Transaction(id: 't1', title: 'Tênis', value: 64.84, date: DateTime.now()),
@@ -53,25 +53,7 @@ class MyHomePage extends StatelessWidget {
               child: Text('Gráfico', style: TextStyle(color: Colors.white)),
             ),
           ),
-          Column(
-            children:
-                _transactions.map((tr) {
-                  return Card(
-                    child: ListTile(
-                      title: Text(tr.title),
-                      subtitle: Text(DateFormat('dd/MM/yyyy').format(tr.date)),
-                      trailing: Text(
-                        'R\$ ${tr.value.toStringAsFixed(2)}',
-                        style: const TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 20,
-                          color: Color.fromARGB(255, 70, 70, 70),
-                        ),
-                      ),
-                    ),
-                  );
-                }).toList(),
-          ),
+
           Card(
             elevation: 5,
             child: Padding(
@@ -79,11 +61,11 @@ class MyHomePage extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   TextField(
-                    onChanged: (newValeu) => title = newValeu,
+                    controller: titleController,
                     decoration: InputDecoration(labelText: 'Titulo'),
                   ),
                   TextField(
-                    onChanged: (newValeu) => value = newValeu,
+                    controller: valeuController,
                     decoration: InputDecoration(labelText: 'valor R\$'),
                   ),
                   Row(
