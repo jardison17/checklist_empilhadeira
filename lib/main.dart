@@ -18,6 +18,9 @@ class ExpensesApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   MyHomePage({super.key});
 
+  String title;
+  String value;
+
   final List<Transaction> _transactions = [
     Transaction(id: 't1', title: 'Tênis', value: 64.84, date: DateTime.now()),
     Transaction(
@@ -60,9 +63,9 @@ class MyHomePage extends StatelessWidget {
                       trailing: Text(
                         'R\$ ${tr.value.toStringAsFixed(2)}',
                         style: const TextStyle(
-                          fontWeight: FontWeight.w300,
+                          fontWeight: FontWeight.w600,
                           fontSize: 20,
-                          color: Color.fromARGB(255, 233, 80, 3),
+                          color: Color.fromARGB(255, 70, 70, 70),
                         ),
                       ),
                     ),
@@ -75,9 +78,30 @@ class MyHomePage extends StatelessWidget {
               padding: const EdgeInsets.all(10),
               child: Column(
                 children: <Widget>[
-                  TextField(decoration: InputDecoration(labelText: 'Titulo')),
                   TextField(
+                    onChanged: (newValeu) => title = newValeu,
+                    decoration: InputDecoration(labelText: 'Titulo'),
+                  ),
+                  TextField(
+                    onChanged: (newValeu) => value = newValeu,
                     decoration: InputDecoration(labelText: 'valor R\$'),
+                  ),
+                  Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: FloatingActionButton(
+                          child: Text(
+                            'Nova Transação',
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w600,
+                              color: Color.fromARGB(255, 70, 70, 70),
+                            ),
+                          ),
+                          onPressed: () {},
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
