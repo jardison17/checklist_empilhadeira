@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './model/transaction.dart';
+import 'package:intl/intl.dart';
 
 void main() => runApp(ExpensesApp());
 
@@ -55,20 +56,32 @@ class MyHomePage extends StatelessWidget {
                   return Card(
                     child: ListTile(
                       title: Text(tr.title),
-                      subtitle: Text(
-                        '${tr.date.day}/${tr.date.month}/${tr.date.year}',
-                      ),
+                      subtitle: Text(DateFormat('dd/MM/yyyy').format(tr.date)),
                       trailing: Text(
                         'R\$ ${tr.value.toStringAsFixed(2)}',
                         style: const TextStyle(
                           fontWeight: FontWeight.w300,
                           fontSize: 20,
-                          color: Color.fromARGB(255, 25, 27, 25),
+                          color: Color.fromARGB(255, 233, 80, 3),
                         ),
                       ),
                     ),
                   );
                 }).toList(),
+          ),
+          Card(
+            elevation: 5,
+            child: Padding(
+              padding: const EdgeInsets.all(10),
+              child: Column(
+                children: <Widget>[
+                  TextField(decoration: InputDecoration(labelText: 'Titulo')),
+                  TextField(
+                    decoration: InputDecoration(labelText: 'valor R\$'),
+                  ),
+                ],
+              ),
+            ),
           ),
         ],
       ),
