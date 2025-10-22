@@ -45,22 +45,26 @@ class _TransactionFormState extends State<TransactionForm> {
                 controller: valeuController,
                 decoration: InputDecoration(labelText: 'valor R\$'),
               ),
-              Row(
-                children: <Widget>[
-                  Expanded(
-                    child: FloatingActionButton(
-                      onPressed: _submitForm,
-                      child: Text(
-                        'Nova Transação',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600,
-                          color: Color.fromARGB(255, 70, 70, 70),
+              Container(
+                child: Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: FloatingActionButton(
+                        backgroundColor: Colors.orange,
+
+                        onPressed: _submitForm,
+                        child: Text(
+                          'Nova Transação',
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600,
+                            color: Color.fromARGB(255, 70, 70, 70),
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ],
           ),

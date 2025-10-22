@@ -13,8 +13,8 @@ class ExpensesApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Despesas',
-      theme: ThemeData(primarySwatch: Colors.blue),
       home: MyHomePage(),
+      theme: ThemeData(primarySwatch: Colors.orange, fontFamily: 'lufga'),
     );
   }
 }
@@ -60,6 +60,8 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       _transactions.add(newTransaction);
     });
+
+    Navigator.of(context).pop();
   }
 
   void _openTransactionFormModal(BuildContext context) {
@@ -89,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             const Card(
-              color: Color.fromARGB(255, 246, 152, 10),
+              color: Colors.orange,
               elevation: 5,
               child: Padding(
                 padding: EdgeInsets.all(10),
@@ -106,6 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: () => _openTransactionFormModal(context),
+        backgroundColor: Colors.orange,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
