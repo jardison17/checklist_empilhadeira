@@ -10,7 +10,7 @@ class ExpensesApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Despesas Pessoais',
+      title: 'Despesas',
       theme: ThemeData(primarySwatch: Colors.blue),
       home: MyHomePage(),
     );
@@ -24,8 +24,8 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Despesas Pessoais')),
-      body: Container(
-        child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: Container(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
