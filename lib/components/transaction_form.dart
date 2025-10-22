@@ -58,7 +58,7 @@ class _TransactionFormState extends State<TransactionForm> {
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.w600,
-                            color: Color.fromARGB(255, 70, 70, 70),
+                            color: Color.fromARGB(255, 237, 235, 235),
                           ),
                         ),
                       ),
