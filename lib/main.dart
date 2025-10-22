@@ -42,22 +42,15 @@ class _MyHomePageState extends State<MyHomePage> {
     Transaction(
       id: 't1',
       title: 'Novo Tênis de Corrida',
-      value: 310.76,
+      value: 399.99,
       date: DateTime.now(),
     ),
     Transaction(
       id: 't2',
-      title: 'Iphone 13',
-      value: 4.000,
+      title: 'Novo Iphone',
+      value: 400.99,
       date: DateTime.now(),
     ),
-    Transaction(
-      id: 't3',
-      title: 'Conta de Luz',
-      value: 211.30,
-      date: DateTime.now(),
-    ),
-    Transaction(id: 't4', title: 'Culsas', value: 90.30, date: DateTime.now()),
   ];
 
   void _addTransaction(String title, double value) {
