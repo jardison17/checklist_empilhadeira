@@ -1,4 +1,3 @@
-import 'package:checklist_empilhadeira/components/transaction_form.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'components/transaction_User.dart';
@@ -24,19 +23,21 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Despesas Pessoais')),
       body: Container(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            const Card(
-              color: Colors.blue,
-              elevation: 5,
-              child: Padding(
-                padding: EdgeInsets.all(10),
-                child: Text('Gráfico', style: TextStyle(color: Colors.white)),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              const Card(
+                color: Colors.blue,
+                elevation: 5,
+                child: Padding(
+                  padding: EdgeInsets.all(10),
+                  child: Text('Gráfico', style: TextStyle(color: Colors.white)),
+                ),
               ),
-            ),
-            TransactionUser(),
-          ],
+              TransactionUser(),
+            ],
+          ),
         ),
       ),
     );
