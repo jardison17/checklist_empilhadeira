@@ -5,7 +5,7 @@ class TransactionForm extends StatelessWidget {
   final valeuController = TextEditingController();
 
   final void Function(String, double) onSubmit;
-  TransactionForm(this.onSubmit);
+  TransactionForm(this.onSubmit, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +21,7 @@ class TransactionForm extends StatelessWidget {
                 decoration: InputDecoration(labelText: 'Titulo'),
               ),
               TextField(
+                keyboardType: TextInputType.numberWithOptions(decimal: true),
                 controller: valeuController,
                 decoration: InputDecoration(labelText: 'valor R\$'),
               ),

@@ -20,16 +20,15 @@
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"
-        }
-    ],
-    "version": "0.2.0",
-    "configurations": [
+        },
         {
-            "name": "Flutter",
+            "name": "Dart & Flutter",
             "request": "launch",
             "type": "dart",
             "program": "lib/main.dart",
-            "pauseOnExceptions": true
+            "args": [],
+            "flutterMode": "debug",
+            "noDebug": false
         }
     ]
 }
